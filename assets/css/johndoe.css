@@ -11961,6 +11961,18 @@ a:hover {
   color: #fff;
 }
 
+.metric-link {
+  display: block;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.metric-link:hover,
+.metric-link:focus {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-2px);
+}
+
 .metric-item strong {
   display: block;
   color: #fff;
@@ -11977,7 +11989,8 @@ a:hover {
 
 .research-card,
 .software-card,
-.publication-list article {
+.publication-list article,
+.publication-card {
   height: 100%;
   border: 1px solid #dce3e7;
   border-radius: 8px;
@@ -12076,17 +12089,93 @@ a:hover {
   gap: 18px;
 }
 
-.publication-list article {
+.publication-list article,
+.publication-card {
+  display: block;
   padding: 24px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.publication-list article span {
+.publication-card:hover,
+.publication-card:focus {
+  border-color: #2f6fbd;
+  box-shadow: 0 16px 36px rgba(47, 111, 189, 0.16);
+  transform: translateY(-3px);
+}
+
+.publication-list article span,
+.publication-card span {
   margin-bottom: 12px;
   color: #2f6fbd;
 }
 
 .publication-list h3 {
   font-size: 1rem;
+}
+
+.publication-records-section {
+  background: #fff;
+}
+
+.publication-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #dce3e7;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(31, 41, 51, 0.06);
+}
+
+.publication-table {
+  width: 100%;
+  min-width: 1040px;
+  margin-bottom: 0;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.publication-table th,
+.publication-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5eaed;
+  color: #52616b;
+  vertical-align: top;
+}
+
+.publication-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #20343d;
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.publication-table tbody tr:hover {
+  background: #f3f8ff;
+}
+
+.publication-table td:nth-child(1),
+.publication-table td:nth-child(2) {
+  color: #1f2933;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.publication-table td:nth-child(3) {
+  min-width: 340px;
+  color: #1f2933;
+  font-weight: 700;
+}
+
+.publication-table td:nth-child(5) {
+  white-space: nowrap;
+}
+
+.publication-table a {
+  font-weight: 700;
+  word-break: break-word;
 }
 
 .contact-panel {
