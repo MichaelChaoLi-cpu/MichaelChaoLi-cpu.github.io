@@ -11691,46 +11691,68 @@ body {
 }
 
 a {
-  color: #b74458;
+  color: #2f6fbd;
 }
 
 a:hover {
-  color: #873243;
+  color: #1f4f8f;
 }
 
 .btn-primary,
 .btn-primary:hover,
 .btn-primary:focus {
-  background: #b74458;
-  border-color: #b74458;
+  background: #2f6fbd;
+  border-color: #2f6fbd;
 }
 
 .btn-outline-danger {
-  color: #b74458;
-  border-color: #b74458;
+  color: #2f6fbd;
+  border-color: #2f6fbd;
 }
 
 .btn-outline-danger:hover,
 .btn-outline-danger:focus {
-  background: #b74458;
-  border-color: #b74458;
+  background: #2f6fbd;
+  border-color: #2f6fbd;
 }
 
 .text-danger {
-  color: #b74458 !important;
+  color: #2f6fbd !important;
 }
 
 .line,
 .contact .contact-title::after {
-  background: #b74458;
+  background: #2f6fbd;
 }
 
 .research-hero {
   min-height: 680px;
   height: 92vh;
-  background-image: linear-gradient(90deg, rgba(12, 24, 32, 0.92), rgba(22, 41, 50, 0.72), rgba(22, 41, 50, 0.18)), url(../imgs/395181.JPG);
-  background-position: center 42%;
+  isolation: isolate;
+  overflow: hidden;
+  background: #102028;
+  background-image: none;
+}
+
+.research-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url(../imgs/395181.JPG?v=20260502-photo-fix);
+  background-size: cover;
+  background-position: center 46%;
   background-attachment: scroll;
+  filter: grayscale(18%) saturate(0.48) brightness(0.62);
+  transform: scale(1.01);
+}
+
+.research-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(8, 18, 24, 0.94) 0%, rgba(12, 25, 32, 0.86) 42%, rgba(12, 25, 32, 0.58) 72%, rgba(12, 25, 32, 0.48) 100%);
 }
 
 .research-hero .container {
@@ -11739,7 +11761,7 @@ a:hover {
 
 .hero-nav {
   position: relative;
-  z-index: 3;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
@@ -11760,13 +11782,14 @@ a:hover {
 .research-hero-content {
   max-width: 880px;
   top: 54%;
+  z-index: 2;
 }
 
 .hero-kicker,
 .section-kicker,
 .software-status {
   margin-bottom: 16px;
-  color: #b74458;
+  color: #2f6fbd;
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -11774,7 +11797,7 @@ a:hover {
 }
 
 .research-hero .hero-kicker {
-  color: #f2b5bd;
+  color: #9cc7ff;
 }
 
 .research-hero .research-hero-content .header-title {
@@ -11831,10 +11854,13 @@ a:hover {
 }
 
 .navbar .nav-link.active {
-  color: #b74458 !important;
+  color: #2f6fbd !important;
 }
 
 .navbar .brand .brand-img {
+  height: 140px;
+  object-fit: cover;
+  object-position: center 34%;
   width: 140px;
 }
 
@@ -12056,7 +12082,7 @@ a:hover {
 
 .publication-list article span {
   margin-bottom: 12px;
-  color: #b74458;
+  color: #2f6fbd;
 }
 
 .publication-list h3 {
@@ -12069,7 +12095,7 @@ a:hover {
 }
 
 .contact-panel .section-kicker {
-  color: #f2b5bd;
+  color: #9cc7ff;
 }
 
 .contact-panel h2 {
@@ -12143,6 +12169,15 @@ a:hover {
 
   .research-hero {
     overflow: hidden;
+  }
+
+  .research-hero::before {
+    background-position: 54% center;
+    filter: grayscale(18%) saturate(0.42) brightness(0.54);
+  }
+
+  .research-hero::after {
+    background: linear-gradient(90deg, rgba(8, 18, 24, 0.92) 0%, rgba(10, 22, 29, 0.82) 64%, rgba(10, 22, 29, 0.68) 100%);
   }
 
   .hero-nav {
