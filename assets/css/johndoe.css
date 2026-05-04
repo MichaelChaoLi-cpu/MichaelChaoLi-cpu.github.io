@@ -11779,6 +11779,40 @@ a:hover {
   color: #fff;
 }
 
+.language-toggle {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 8px 12px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.language-toggle:hover,
+.language-toggle:focus {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  outline: 0;
+}
+
+.nav-language-toggle {
+  margin: 0 12px;
+  border-color: #dce3e7;
+  background: #fff;
+  color: #2f6fbd;
+}
+
+.nav-language-toggle:hover,
+.nav-language-toggle:focus {
+  border-color: #2f6fbd;
+  background: #eef5ff;
+  color: #1f5fa8;
+}
+
 .research-hero-content {
   max-width: 880px;
   top: 54%;

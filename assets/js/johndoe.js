@@ -31,6 +31,69 @@ $(document).ready(function(){
     });
 });
 
+// language switcher
+(function() {
+    var storageKey = "profileLanguage";
+
+    function getStoredLanguage() {
+        try {
+            return localStorage.getItem(storageKey);
+        } catch (error) {
+            return null;
+        }
+    }
+
+    function storeLanguage(language) {
+        try {
+            localStorage.setItem(storageKey, language);
+        } catch (error) {
+            return;
+        }
+    }
+
+    function applyLanguage(language) {
+        var activeLanguage = language === "zh" ? "zh" : "en";
+        var title = document.body.getAttribute("data-title-" + activeLanguage);
+
+        document.documentElement.lang = activeLanguage === "zh" ? "zh-CN" : "en";
+        document.documentElement.classList.toggle("is-zh", activeLanguage === "zh");
+
+        if (title) {
+            document.title = title;
+        }
+
+        document.querySelectorAll("[data-en][data-zh]").forEach(function(element) {
+            var value = element.getAttribute("data-" + activeLanguage);
+
+            if (element.hasAttribute("data-i18n-html")) {
+                element.innerHTML = value;
+            } else {
+                element.textContent = value;
+            }
+        });
+
+        document.querySelectorAll(".language-toggle").forEach(function(button) {
+            button.setAttribute(
+                "aria-label",
+                activeLanguage === "zh" ? "Switch to English" : "切换到中文"
+            );
+        });
+
+        storeLanguage(activeLanguage);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        applyLanguage(getStoredLanguage() || "en");
+
+        document.querySelectorAll(".language-toggle").forEach(function(button) {
+            button.addEventListener("click", function() {
+                var nextLanguage = document.documentElement.lang === "zh-CN" ? "en" : "zh";
+                applyLanguage(nextLanguage);
+            });
+        });
+    });
+})();
+
 // protfolio filters
 $(window).on("load", function() {
     var t = $(".portfolio-container");
