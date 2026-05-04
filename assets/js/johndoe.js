@@ -72,6 +72,10 @@ $(document).ready(function(){
             }
         });
 
+        document.querySelectorAll("[data-href-en][data-href-zh]").forEach(function(element) {
+            element.setAttribute("href", element.getAttribute("data-href-" + activeLanguage));
+        });
+
         document.querySelectorAll(".language-toggle").forEach(function(button) {
             button.setAttribute(
                 "aria-label",
